@@ -1,6 +1,6 @@
 /* General definition */
 html {
-    font-size: 16px;
+    font-size: 2.1vw;
 }
 
 * {
@@ -15,7 +15,6 @@ footer {
     position: fixed;
     background-color: #8fc0a9;
     bottom: 0;
-    font-size: 0.5rem;
     padding: 5px;
 }
 
@@ -40,11 +39,12 @@ footer {
     flex-direction: row;
     vertical-align: middle;
     width: 100vw;
-    height: 7vh;
+    height: clamp(3.4rem, );
 }
 
 .header > span {
     padding: 0.50vw;
+    font-size: clamp(0.6rem, 1rem, 1.4rem);
 }
 
 .header, footer {
@@ -56,27 +56,21 @@ footer {
 }
 
 .body {
-    font-size: 0.5rem;
+    font-size: clamp(0.1rem, 0.5rem, 0.9rem);
     width: 100vw;
     height: 90vh;
 }
 
 .footer {
     width: 100vw;
-    height: 3vh;
-}
-
-.footer {
+    height: clamp(0.31rem, 0.71rem, 1.11rem);
     text-align: center;
     justify-content: center;
+    font-size: clamp(0.4rem, 0.8rem, 1.2rem);
 }
 
 .footer > a {
     padding: 5px;
-}
-
-.footer > a > i {
-    font-size: 0.75rem;
 }
 
 .table_container, .body {
@@ -124,14 +118,17 @@ td > div > a > img {
 }
 
 button {
-    height: 4.5vh;
-    width: 2.25vw;
+    height: clamp(0.8rem, 1.2rem, 1.6rem);
+    width: clamp(0.8rem, 1.2rem, 1.6rem);
     text-align: center;
     border-style: solid;
-    border-radius: 2.25vh;
+    border-radius: clamp(0.8rem, 1.2rem, 1.6rem);
     border-width: 0.1px;
     border-color: #907ad6;
     background-color: #2c2a4a;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 .btn_add_container {
@@ -141,12 +138,12 @@ button {
 }
 
 .material-symbols-outlined {
-    font-size: 0.56rem !important;
+    font-size: clamp(0.4rem, 0.8rem, 1.2rem) !important;
 }
 
 /* Animation */
 
-.pulse:hover{
+.pulse:hover {
     animation: pulse 0.5s;
 }
 
@@ -162,13 +159,12 @@ button {
     }
 }
 
-.tilt:hover > span {
+.tilt:hover {
     transition: ease 0.2s;
-    backface-visibility: hidden;
-    transform: rotate(25deg) translateZ(0) scale(1, 1);
+    transform: rotate(25deg) translateZ(0);
 }
 
-.glow:hover{
+.glow:hover {
     transition: ease-in-out 0.2s;
     color: #dabfff;
 }

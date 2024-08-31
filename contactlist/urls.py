@@ -5,5 +5,5 @@ from . import views
 # URL configuration
 urlpatterns = [
     path('hello/', views.say_hello),
-    path('index/', views.index)
+    path('contactlist/', views.index)
 ]

@@ -22,5 +22,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     # Any url that starts with specified path 
     # will be routed to its url config
-    path('contactlist/', include('contactlist.urls'))
+    path('', include('contactlist.urls'))
 ] + debug_toolbar_urls()

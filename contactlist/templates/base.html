@@ -1,0 +1,19 @@
+{% include 'table.html' %}
+{% include 'links.html' %}
+{% include 'footer.html' %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact List</title>
+</head>
+<body>
+    <div id="wrapper">
+        {% block table %} <!-- Inserts table module --> {% endblock %}
+    </div>
+    {% block footer %} <!-- Inserts footer module --> {% endblock %}
+</body>
+    {% block links %} <!-- Inserts links module --> {% endblock %}
+</html>

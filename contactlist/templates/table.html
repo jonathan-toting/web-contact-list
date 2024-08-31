@@ -1,0 +1,70 @@
+{% block table %}
+
+<!-- Header section where all the tools lie -->
+<div class="section header">
+    <div><span><b>Contact List</b></span></div>
+    <div><button class="btn_ser tilt material-symbols-outlined">search</button></div>
+</div>
+<!-- Body section where all the contents lie -->
+<div class="section body">
+    <div class="table_container">
+        <table>
+            <thead>
+                <tr>
+                    <th>Company Logo</th>
+                    <th>Company Name</th>
+                    <th>Company Address</th>
+                    <th>Company Description</th>
+                    <th>Company Contacts</th>
+                    <th>Tooltab</th>
+                </tr>
+            </thead>
+            <tfoot>
+                <!-- Some footer, may add something here soon -->
+                <tr>
+                    <td colspan="6" class="tfoot_container">
+                        <div class="btn_add_container">
+                            <button class="btn_add pulse material-symbols-outlined">add</button>
+                        </div>
+                    </td>
+                </tr>
+            </tfoot>
+            <tbody>
+            <!-- Data sample one -->
+                <tr>
+                    <td><div class="img_container"><a href="sampleWebpage" target="_blank" alt="Company logo link to website"><img src="../assets/images/CompanyOneLogo.png" alt="Company Logo"></a></div></td>
+                    <td>TeaCup</td>
+                    <td>CA</td>
+                    <td>A tea shop selling tea</td>
+                    <td>(000)72 887 2333</td>
+                    <td>
+                        <div class="tool_container">
+                            <button class="btn_del tilt material-symbols-outlined">delete</button>
+                            <button class="btn_edt tilt material-symbols-outlined">edit</button>
+                            <button class="btn_fav pulse material-symbols-outlined">favorite</button>
+                        </div>
+                    </td>
+                </tr>
+                <!-- Data sample one -->
+                <!-- Data sample two -->
+                <tr>
+                    <td><div class="img_container"><a href="https://www.google.com" target="_blank" alt="Company logo link to website"><img src="assets/images/GoogleLogo.png" alt="Company Logo"></a></div></td>
+                    <td>Google</td>
+                    <td>US</td>
+                    <td>A search engine</td>
+                    <td>(000)98 811 4577</td>
+                    <td>
+                        <div class="tool_container">
+                            <button class="btn_del tilt material-symbols-outlined">delete</button>
+                            <button class="btn_edt tilt material-symbols-outlined">edit</button>
+                            <button class="btn_fav pulse material-symbols-outlined">favorite</button>
+                        </div>
+                    </td>
+                </tr>
+                <!-- Data sample two -->
+            </tbody>
+        </table>
+    </div>
+</div>
+
+{% endblock %}

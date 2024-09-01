@@ -4,6 +4,6 @@ from . import views
 
 # URL configuration
 urlpatterns = [
-    # path('hello/', views.say_hello),
     path('', views.homepage_view),
+    path('create', views.contact_create_view),
 ]

@@ -1,11 +1,33 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from .models import Contact
+from .forms import AddForm
 
 # Create your views here. ;; Request Handler
 
-def say_hello(request):
-    return HttpResponse("Hello World")
+    # Raw HTML form method
+    # form = AddForm(request.POST or None)
+    # if form.is_valid():
+    #    form.save()
+    #    form = AddForm()
+    # context = {
+    #   'form':form
+    # }
+    
+def contact_create_view(request):
+    form = AddForm()
+    if request.method == 'POST':
+        form = AddForm(request.POST)
+        if form.is_valid():
+            print(form.cleaned_data)
+            # Pass in verified data with ** to convert to args
+            Contact.objects.create(**form.cleaned_data)
+        else :
+            print(form.errors)
+    context = {
+        'form':form
+    }
+    return render(request, 'addForm.html', context)
 
 def homepage_view(request, *args, **kwargs):
     print(args, kwargs)

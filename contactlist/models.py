@@ -5,7 +5,7 @@ from django.db import models
 
 class Contact(models.Model):
     cname           = models.CharField(max_length=120)
-    caddress        = models.TextField(blank=False, null=False)
-    cdescription    = models.TextField(blank=False, null=False)
+    caddress        = models.TextField(blank=True, null=True)
+    cdescription    = models.TextField(blank=True, null=True)
     cnumber         = models.PositiveSmallIntegerField()
-    cstatus         = models.BooleanField('Online')
+    # cstatus         = models.BooleanField('Online')

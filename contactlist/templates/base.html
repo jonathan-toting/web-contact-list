@@ -1,6 +1,6 @@
 {% include 'table.html' %}
-{% include 'links.html' %}
 {% include 'footer.html' %}
+{% load static %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -10,10 +10,12 @@
     <title>Contact List</title>
 </head>
 <body>
-    <div id="wrapper">
-        {% block table %} <!-- Inserts table module --> {% endblock %}
-    </div>
+    {% block table %} <!-- Inserts table module --> {% endblock %}
     {% block footer %} <!-- Inserts footer module --> {% endblock %}
 </body>
-    {% block links %} <!-- Inserts links module --> {% endblock %}
+<!-- css import -->
+<link rel="stylesheet" type="text/css" href="{% static '/css/index_style.css' %}">
+<!-- icon import -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 </html>

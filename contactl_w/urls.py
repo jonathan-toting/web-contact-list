@@ -23,5 +23,7 @@ urlpatterns = [
     # Any url that starts with specified path 
     # will be routed to its url config
     # TODO: Add this as subpath to a login parent
-    path('', include('contactlist.urls'))
+    path('', include('pages.urls')),
+    # TODO: Implement profiles
+    # path('', include('profiles.urls')),
 ] + debug_toolbar_urls()

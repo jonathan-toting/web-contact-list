@@ -85,8 +85,12 @@ WSGI_APPLICATION = 'contactl_w.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR/'database'/'contacts_db.sqlite3',
+        'ENGINE' : 'django.db.backends.postgresql',
+        'NAME' : 'contact_db',
+        'USER' : 'postgres',
+        'PASSWORD' : 'Cloudsp@rk91801',
+        'HOST' : 'localhost',
+        'PORT' : '9157',
     }
 }
 

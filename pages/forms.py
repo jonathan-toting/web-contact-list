@@ -1,8 +1,8 @@
 from django import forms
-from .models import Contacts
+from .models import Contact
 import phonenumbers
 
-# Fill up form for adding contacts
+# Fill up form for adding Contact
 
 class AddForm(forms.ModelForm):
     # Overwrites
@@ -57,7 +57,7 @@ class AddForm(forms.ModelForm):
         )
     # Metadata
     class Meta:
-        model = Contacts
+        model = Contact
         fields = [
             'cweb',
             'cpersonel',
@@ -102,3 +102,8 @@ class AddForm(forms.ModelForm):
     def clean_cdescription (self, *args, **kwargs): 
         r = self.cleaned_data.get('cdescription')
         return r
+    
+    #TODO: 
+        # Overwrite object names in databse
+        # to be shown as such instead of object IDs.
+        # Can also overwrite selection default label.

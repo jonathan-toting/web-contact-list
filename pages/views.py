@@ -1,20 +1,14 @@
 from django.shortcuts import render
 # from django.http import HttpResponse
-from .models import Contacts
+from .models import Contact
 from .forms import AddForm
 
 # Create your views here. ;; Request Handler
 
-def homepage_view(request, *args, **kwargs):
-    print(args, kwargs)
-    print(request.user)
-    obj = Contacts.objects.get(id=1)
-    context = {
-        'object':obj
-    }
-    return render(request, 'base.html', context)
+def contact_view(request):
+    return render(request, 'table.html')
 
-def contact_create_view(request):
+def contact_add(request):
     form = AddForm(request.POST or None)
     if form.is_valid():
         form.save()
@@ -23,3 +17,14 @@ def contact_create_view(request):
     'form':form
     }
     return render(request, 'addForm.html', context)
+
+# TODO:
+    # Implement post/get requests for filling the database
+    # and serving json packages to be rendered in html templates.
+    # Have three functions for adding, updating, and deletion.
+
+def contact_update(request):
+    return
+
+def contact_delete(request):
+    return

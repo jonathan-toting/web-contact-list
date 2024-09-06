@@ -1,5 +1,3 @@
-{% include 'table.html' %}
-{% include 'footer.html' %}
 {% load static %}
 
 <!DOCTYPE html>
@@ -11,7 +9,12 @@
 </head>
 <body>
     {% block table %} <!-- Inserts table module --> {% endblock %}
-    {% block footer %} <!-- Inserts footer module --> {% endblock %}
+    <footer class="section">
+        <div class="footer">
+            <a href="https://www.github.com/jonathan-toting" target="_blank" alt="Github icon link to profile"><i class="fa-brands fa-github glow"></i></a>
+            <a href="https://www.linkedin.com/in/jonathan-toting" target="_blank" alt="Linkedin icon link to profile"><i class="fa-brands fa-linkedin glow"></i></a>
+        </div>
+    </footer>
 </body>
 <!-- css import -->
 <link rel="stylesheet" type="text/css" href="{% static '/css/pages_style.css' %}">

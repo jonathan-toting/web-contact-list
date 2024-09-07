@@ -8,7 +8,17 @@
     <title>Contact List</title>
 </head>
 <body>
-    {% block table %} <!-- Inserts table module --> {% endblock %}
+    <div id="wrapper">
+        <!-- Header section where all the tools lie -->
+        <div class="section header">
+            <div><span><b>Contact List</b></span></div>
+            <div><button class="btn_ser tilt material-symbols-outlined">search</button></div>
+        </div>
+        <!-- Body section where all the contents lie -->
+        <div class="section body">
+            {% block content %} <!-- Inserts module --> {% endblock %}
+        </div>
+    </div>
     <footer class="section">
         <div class="footer">
             <a href="https://www.github.com/jonathan-toting" target="_blank" alt="Github icon link to profile"><i class="fa-brands fa-github glow"></i></a>

@@ -5,56 +5,6 @@ import phonenumbers
 # Fill up form for adding Contact
 
 class AddForm(forms.ModelForm):
-    # Overwrites
-    cweb            = forms.CharField(
-            required=True, 
-            label='Web address', 
-            widget=forms.TextInput(
-                attrs={"placeholder":"i.e. www.google.com"}
-            )
-        )
-    cpersonel       = forms.CharField(
-            required=True, 
-            label='Assigned personel', 
-            widget=forms.TextInput(
-                attrs={"placeholder":"i.e. Edward Stew"}
-            )
-        )
-    cemail          = forms.EmailField(
-            required=True, 
-            label='Email address', 
-            widget=forms.TextInput(
-                attrs={"placeholder":"i.e. sample@sample.com"}
-            )
-        )
-    cnumber      = forms.IntegerField(
-            required=True,  
-            label='Contact #', 
-            widget=forms.TextInput(
-                attrs={"placeholder":"i.e. 9887653321"}
-            )
-        )
-    cname           = forms.CharField(
-            required=True, 
-            label='Company Name', 
-            widget=forms.TextInput(
-                attrs={"placeholder":"i.e. Google"}
-            )
-        )
-    caddress        = forms.CharField(
-            required=True, 
-            label='Company Address', 
-            widget=forms.Textarea(
-                attrs={"placeholder":"i.e. US"}
-            )
-        )
-    cdescription    = forms.CharField(
-            required=True, 
-            label='Company Description', 
-            widget=forms.Textarea(
-                attrs={"placeholder":"i.e. Search engine"}
-            )
-        )
     # Metadata
     class Meta:
         model = Contact
@@ -67,6 +17,56 @@ class AddForm(forms.ModelForm):
             'caddress',
             'cdescription',
         ]
+    # Overwrites
+    cweb            = forms.CharField(
+            required=True, 
+            # label='Web address', 
+            widget=forms.TextInput(
+                # attrs={"placeholder":"i.e. www.google.com"}
+            )
+        )
+    cpersonel       = forms.CharField(
+            required=True, 
+            # label='Assigned personel', 
+            widget=forms.TextInput(
+                # attrs={"placeholder":"i.e. Edward Stew"}
+            )
+        )
+    cemail          = forms.EmailField(
+            required=True, 
+            # label='Email address', 
+            widget=forms.TextInput(
+                # attrs={"placeholder":"i.e. sample@sample.com"}
+            )
+        )
+    cnumber      = forms.IntegerField(
+            required=True,  
+            # label='Contact #', 
+            widget=forms.TextInput(
+                # attrs={"placeholder":"i.e. 9887653321"}
+            )
+        )
+    cname           = forms.CharField(
+            required=True, 
+            # label='Company Name', 
+            widget=forms.TextInput(
+                # attrs={"placeholder":"i.e. Google"}
+            )
+        )
+    caddress        = forms.CharField(
+            required=True, 
+            # label='Company Address', 
+            widget=forms.Textarea(
+                # attrs={"placeholder":"i.e. US"}
+            )
+        )
+    cdescription    = forms.CharField(
+            required=True, 
+            # label='Company Description', 
+            widget=forms.Textarea(
+                # attrs={"placeholder":"i.e. Search engine"}
+            )
+        )
     # Validations
     def clean_cweb (self, *args, **kwargs): 
         r = self.cleaned_data.get('cweb')

@@ -37,7 +37,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'contactlist',
+    'phonenumbers',
+    'pages',
+    'profiles',
     'debug_toolbar',
 ]
 
@@ -62,7 +64,7 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         # References template folders using the base directory
-        'DIRS': [BASE_DIR / 'templates'],
+        'DIRS': [BASE_DIR /'pages'/'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -83,8 +85,12 @@ WSGI_APPLICATION = 'contactl_w.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE' : 'django.db.backends.postgresql',
+        'NAME' : 'contact_db',
+        'USER' : 'postgres',
+        'PASSWORD' : 'Cloudsp@rk91801',
+        'HOST' : 'localhost',
+        'PORT' : '9157',
     }
 }
 
@@ -126,7 +132,7 @@ USE_TZ = True
 STATIC_URL = 'static/'
 
 STATICFILES_DIRS = [
-    BASE_DIR / 'contactlist/static'
+    BASE_DIR/'pages'/'static',
 ]
 
 # Default primary key field type

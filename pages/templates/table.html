@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<div class="table_container">
+    <table>
+        <thead>
+            <tr>
+                <th>Company Logo</th>
+                <th>Personel</th>
+                <th>Email</th>
+                <th>Contact #</th>
+                <th>Company Name</th>
+                <th>Company Address</th>
+                <th>Company Description</th>
+                <th>Tooltab</th>
+            </tr>
+        </thead>
+        <tfoot>
+            <!-- Some footer, may add something here soon -->
+            <tr>
+                <td colspan="8" class="tfoot_container">
+                    <div class="toolbar_container">
+                        <button class="btn_add btn_tools pulse material-symbols-outlined">add</button>
+                        <button class="btn_edt btn_tools tilt material-symbols-outlined">edit</button>
+                        <button class="btn_del btn_tools tilt material-symbols-outlined">delete</button>
+                    </div>
+                </td>
+            </tr>
+        </tfoot>
+        <tbody>
+            <!-- Data Render -->
+            {% for contact in contact_list %}
+                <tr>
+                    <td><div class="img_container"><a href="{{ contact.cweb }}" target="_blank" alt="Company logo link to website"><img src="{% static '/img/GoogleLogo.png' %}" alt="Company Logo"></a></div></td>
+                    <td>{{ contact.cpersonel }}</td>
+                    <td>{{ contact.cemail }}</td>
+                    <td>{{ contact.cnumber }}</td>
+                    <td>{{ contact.cname }}</td>
+                    <td>{{ contact.caddress }}</td>
+                    <td>{{ contact.cdescription }}</td>
+                    <td>
+                        <div class="star_container">
+                            <button class="btn_star pulse material-symbols-outlined">star</button>
+                        </div>
+                    </td>
+                </tr>
+            {% endfor %}
+            <!-- Data Render -->
+        </tbody>
+    </table>
+</div>
+{% endblock %}

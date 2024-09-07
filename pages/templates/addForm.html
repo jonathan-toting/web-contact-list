@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block content %} 
+
+<!-- Form for creating new contacts -->
+<div class="form_container">
+    <form method="POST"> 
+        {% csrf_token %} <!-- Used as security measure to verify POST source legitimacy -->
+        <!-- {{ form.as_p }} -->
+        <p>Web address:</p>
+            {{ form.cweb }}
+        <p>Assigned personel:</p>
+            {{ form.cpersonel }}
+        <p>Email address:</p>
+            {{ form.cemail }}
+        <p>Contact #:</p>
+            {{ form.cnumber }}
+        <p>Company Name:</p>
+            {{ form.cname }}
+        <p>Company Address:</p>
+            {{ form.caddress }}
+        <p>Company Description:</p>
+            {{ form.cdescription }}
+        <span class="divider"></span>
+        <button type="submit" class="pulse material-symbols-outlined">person_add</button>
+    </form>
+</div>
+
+{% endblock %}

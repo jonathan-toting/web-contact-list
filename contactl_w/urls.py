@@ -22,5 +22,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     # Any url that starts with specified path 
     # will be routed to its url config
-    path('', include('contactlist.urls'))
+    # TODO: Add this as subpath to a login parent
+    path('', include('pages.urls')),
+    # TODO: Implement profiles
+    # path('', include('profiles.urls')),
 ] + debug_toolbar_urls()

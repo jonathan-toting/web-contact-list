@@ -7,7 +7,14 @@ from .forms import CreateForm
 # Create your views here. ;; Request Handler
 
 def contact_view(request):
-    return render(request, 'table.html', {'contact_list':Contact.objects.all()})
+    return render(request, 'table.html', {'contact_list' : Contact.objects.all()})
+
+
+#TODO: Implement htmx
+# def contact_render(request):
+#     return render(request, 'tableData.html', {
+#         'contact_list' : Contact.objects.all(),
+#     })
 
 # TODO:
 #   Add a handler in html and js for update actions
@@ -30,6 +37,8 @@ def contact_create(request, id=0):
             form = CreateForm(request.POST, instance=entry)
         if form.is_valid():
                 form.save()
+        else:
+            raise ValueError("Incorrect input!")
         return redirect('contact-view')
     
 # def contact_add(request):

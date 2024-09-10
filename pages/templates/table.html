@@ -50,7 +50,7 @@
                     <td>
                         <div class="switch_container">
                             <a class="btn_star btn_style"><span class="pulse material-symbols-outlined">star</span></a>
-                            <form action="{% url 'contact-delete' contact.id %}">
+                            <form action="{% url 'contact-delete' contact.id %}" method="POST">
                                 {% csrf_token %}
                                 <button type="submit" class="btn_select_del btn_style"><span class="tilt material-symbols-outlined">delete</span></button>
                             </form>

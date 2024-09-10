@@ -4,8 +4,8 @@ from . import views
 
 # URL configuration
 urlpatterns = [
-    path('contacts', views.contact_view),
-    path('create', views.contact_add),
-    # path('update', views.contact_update),
-    # path('delete', views.contact_delete),
+    path('', views.contact_view, name='contact-view'),
+    path('create/', views.contact_create, name='contact-create'),
+    path('create/<int:id>/', views.contact_create, name='contact-update'),
+    path('delete/<int:id>/', views.contact_delete, name='contact-delete'),
 ]

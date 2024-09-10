@@ -4,7 +4,7 @@ import phonenumbers
 
 # Fill up form for adding Contact
 
-class AddForm(forms.ModelForm):
+class CreateForm(forms.ModelForm):
     # Metadata
     class Meta:
         model = Contact
@@ -39,7 +39,7 @@ class AddForm(forms.ModelForm):
                 # attrs={"placeholder":"i.e. sample@sample.com"}
             )
         )
-    cnumber      = forms.IntegerField(
+    cnumber         = forms.IntegerField(
             required=True,  
             # label='Contact #', 
             widget=forms.TextInput(
@@ -80,7 +80,7 @@ class AddForm(forms.ModelForm):
         r = self.cleaned_data.get('cemail')
         return r
     
-    def clean_cnumber(self, *args, **kwargs):
+    def clean_cnumber (self, *args, **kwargs):
         # Ensure valid data
         parse_number = phonenumbers.parse(("+" + str(self.cleaned_data.get("cnumber"))), None)
         # Ensure valid phone number with E.164 format : [ https://en.wikipedia.org/wiki/E.164 ]
@@ -89,6 +89,7 @@ class AddForm(forms.ModelForm):
             r = phonenumbers.format_number(parse_number, phonenumbers.PhoneNumberFormat.INTERNATIONAL)
             return r
         else:
+            print("cnumber ... ERROR")
             raise forms.ValidationError("Ensure phone number is valid.")
     
     def clean_cname (self, *args, **kwargs): 

@@ -21,9 +21,17 @@
             <tr>
                 <td colspan="8" class="tfoot_container">
                     <div class="toolbar_container">
-                        <button class="btn_add btn_tools pulse material-symbols-outlined">add</button>
-                        <button class="btn_edt btn_tools tilt material-symbols-outlined">edit</button>
-                        <button class="btn_del btn_tools tilt material-symbols-outlined">delete</button>
+                        <a class="btn_add btn_tools btn_style" href="{% url 'contact-create' %}"><span class="pulse material-symbols-outlined">add</span></a>
+                        <!-- Implement update -->
+                        <div class="btn_tools switch_container">
+                            <a class="btn_cancel_edt btn_style"><span class="pulse material-symbols-outlined">close</span></a>
+                            <a class="btn_edt btn_style"><span class="tilt material-symbols-outlined">edit</span></a>
+                        </div>
+                        <!-- Implement delete -->
+                        <div class="btn_tools switch_container">
+                            <a class="btn_cancel_del btn_style"><span class="pulse material-symbols-outlined">close</span></a>
+                            <a class="btn_del btn_style"><span class="tilt material-symbols-outlined">delete</span></a>
+                        </div>
                     </div>
                 </td>
             </tr>
@@ -40,8 +48,13 @@
                     <td>{{ contact.caddress }}</td>
                     <td>{{ contact.cdescription }}</td>
                     <td>
-                        <div class="star_container">
-                            <button class="btn_star pulse material-symbols-outlined">star</button>
+                        <div class="switch_container">
+                            <a class="btn_star btn_style"><span class="pulse material-symbols-outlined">star</span></a>
+                            <form action="{% url 'contact-delete' contact.id %}">
+                                {% csrf_token %}
+                                <button type="submit" class="btn_select_del btn_style"><span class="tilt material-symbols-outlined">delete</span></button>
+                            </form>
+                            <a href="{% url 'contact-update' contact.id %}" class="btn_select_edt btn_style"><span class="tilt material-symbols-outlined">edit</span></a>
                         </div>
                     </td>
                 </tr>

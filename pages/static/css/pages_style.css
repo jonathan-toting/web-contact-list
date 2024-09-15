@@ -19,17 +19,9 @@ p {
     font-size: clamp(0.1rem, 0.5rem, 0.9rem);
 }
 
-.form_container {
-    height: 75vh;
-    margin-top: 3%;
-    padding-left: 5%;
-    padding-right: 5%;
-    overflow-y: auto;
-    overflow-x: hidden;
-}
-
 textarea, input {
-    width: 30vw;
+    min-width: 30vw;
+    max-width: 30vw;
     border-style: solid;
     border-width: 0.1px;
     border-color: #dabfff;
@@ -43,11 +35,13 @@ form {
 }
 
 input {
-    height: clamp(0.3rem, 0.8rem, 1.1rem);
+    min-height: clamp(0.3rem, 0.8rem, 1.1rem);
+    max-height: clamp(0.3rem, 0.8rem, 1.1rem);
 }
 
 textarea {
-    height: clamp(0.9rem, 2.4rem, 3.3rem);
+    min-height: clamp(0.9rem, 2.4rem, 3.3rem);
+    max-height: clamp(0.9rem, 2.4rem, 3.3rem);
 }
 
 footer {
@@ -199,6 +193,11 @@ a, u {
 
 .btn_style > span {
     text-align:center;
+}
+
+.btn_style:hover, .btn_style:focus {
+    text-decoration: none;
+    cursor: pointer;
 }
 
 .toolbar_container {

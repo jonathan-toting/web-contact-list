@@ -1,0 +1,32 @@
+<!-- The Modal -->
+<div id="createModal" class="modal">
+    <!-- Modal content -->
+    <div class="modalContent">
+      <!-- Form for creating new contacts -->
+      <div class="form_container">
+        <form action="{% url 'contact-create' %}" method="POST"> 
+            {% csrf_token %} <!-- Used as security measure to verify POST source legitimacy -->
+            <!-- {{ form.as_p }} -->
+            <p>Web address:</p>
+                {{ form.cweb }}
+            <p>Assigned personel:</p>
+                {{ form.cpersonel }}
+            <p>Email address:</p>
+                {{ form.cemail }}
+            <p>Contact #:</p>
+                {{ form.cnumber }}
+            <p>Company Name:</p>
+                {{ form.cname }}
+            <p>Company Address:</p>
+                {{ form.caddress }}
+            <p>Company Description:</p>
+                {{ form.cdescription }}
+            <span class="divider"></span>
+            <div>
+              <button type="submit" class="btn_save pulse btn_style material-symbols-outlined">save</button>
+              <button class="btn_close pulse btn_style"><span class="pulse material-symbols-outlined">close</span></button>
+            </div>
+        </form>
+      </div>
+    </div>
+  </div>

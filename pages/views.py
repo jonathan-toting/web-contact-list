@@ -1,13 +1,13 @@
-from django.http import HttpResponse
+# from django.http import HttpRequest, HttpResponse
 from django.shortcuts import redirect, render
-from django.http import JsonResponse
+# from django.http import JsonResponse
 from .models import Contact
 from .forms import CreateForm
 
 # Create your views here. ;; Request Handler
 
 def contact_view(request):
-    return render(request, 'table.html', {'contact_list' : Contact.objects.all()})
+    return render(request, 'table.html', {'contact_list' : Contact.objects.all(), 'form' : CreateForm()})
 
 
 #TODO: Implement htmx
@@ -40,6 +40,15 @@ def contact_create(request, id=0):
         else:
             raise ValueError("Incorrect input!")
         return redirect('contact-view')
+    
+def render_selected(request, id=0):
+    if request.method == 'GET':
+        if id == 0:
+            form = CreateForm()
+        else:
+            entry = Contact.objects.get(pk=id)
+            form = CreateForm(instance=entry)
+    return render(request, 'table.html', {'contact_list' : Contact.objects.all(), 'form' : CreateForm()})
     
 # def contact_add(request):
 #     if request.method == 'POST':

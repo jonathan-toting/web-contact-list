@@ -6,7 +6,7 @@
     <table>
         <thead>
             <tr>
-                <th>Company Logo</th>
+                <th>Web link</th>
                 <th>Personel</th>
                 <th>Email</th>
                 <th>Contact #</th>
@@ -21,8 +21,7 @@
             <tr>
                 <td colspan="8" class="tfoot_container">
                     <div class="toolbar_container">
-                        <!-- Update button function to modal -->
-                        <button id="btn_add" class="btn_tools btn_style"><span class="pulse material-symbols-outlined">add</span></button>
+                        <a href="{% url 'contact-create' %}" class="btn_tools btn_style"><span class="pulse material-symbols-outlined">add</span></a>
                         <!-- Implement update -->
                         <div class="btn_tools switch_container">
                             <a class="btn_cancel_edt btn_style"><span class="pulse material-symbols-outlined">close</span></a>
@@ -38,29 +37,8 @@
             </tr>
         </tfoot>
         <tbody>
-            <!-- Data Render -->
-            {% for contact in contact_list %}
-                <tr>
-                    <td><div class="img_container"><a href="{{ contact.cweb }}" target="_blank" alt="Company logo link to website"><img src="{% static '/img/GoogleLogo.png' %}" alt="Company Logo"></a></div></td>
-                    <td>{{ contact.cpersonel }}</td>
-                    <td>{{ contact.cemail }}</td>
-                    <td>{{ contact.cnumber }}</td>
-                    <td>{{ contact.cname }}</td>
-                    <td>{{ contact.caddress }}</td>
-                    <td>{{ contact.cdescription }}</td>
-                    <td>
-                        <div class="switch_container">
-                            <a class="btn_star btn_style"><span class="pulse material-symbols-outlined">star</span></a>
-                            <form action="{% url 'contact-delete' contact.id %}" method="POST">
-                                {% csrf_token %}
-                                <button type="submit" class="btn_select_del btn_style"><span class="tilt material-symbols-outlined">delete</span></button>
-                            </form>
-                            <a href="{% url 'contact-update' contact.id %}" class="btn_select_edt btn_style"><span class="tilt material-symbols-outlined">edit</span></a>
-                        </div>
-                    </td>
-                </tr>
-            {% endfor %}
-            <!-- Data Render -->
+            <!-- Insert events here -->
+            {% block data %} <!-- Inserts module --> {% endblock %}
         </tbody>
     </table>
 </div>

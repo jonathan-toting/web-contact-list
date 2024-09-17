@@ -19,7 +19,7 @@ p {
     font-size: clamp(0.1rem, 0.5rem, 0.9rem);
 }
 
-textarea, input {
+form > textarea, form > input {
     min-width: 30vw;
     max-width: 30vw;
     border-style: solid;
@@ -29,19 +29,19 @@ textarea, input {
     margin-bottom: 2%;
 }
 
-form {
-    display: flex;
-    flex-direction: column;
-}
-
-input {
+form > input {
     min-height: clamp(0.3rem, 0.8rem, 1.1rem);
     max-height: clamp(0.3rem, 0.8rem, 1.1rem);
 }
 
-textarea {
+form > textarea {
     min-height: clamp(0.9rem, 2.4rem, 3.3rem);
     max-height: clamp(0.9rem, 2.4rem, 3.3rem);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
 }
 
 footer {
@@ -78,6 +78,8 @@ footer {
 
 .header > div {
     padding: 0.50vw;
+    display: flex;
+    align-items: center;
 }
 
 .header, footer {
@@ -208,6 +210,35 @@ a, u {
 
 .btn_tools {
     margin-right: 1%;
+}
+
+.search_f_style {
+    border-style: none;
+    background-color: transparent;
+    outline: none;
+    width: 0;
+    transition: 0.4s;
+}
+
+.btn_ser {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-style: none;
+    background-color: transparent;
+}
+
+.search_box {
+    transition: 0.4s;
+}
+
+.search_box:hover {
+    width: 300px;
+}
+
+.search_box:hover > .search_f_style {
+    display: flex;
+    width: 250px;
 }
 
 .material-symbols-outlined {

@@ -14,10 +14,10 @@
         <div class="section header">
             <div><span><b>Contact List</b></span></div>
             <div>
-                <form action="" method="POST"></form>
-                    {% csrf_token %}
+                <form action="{% url 'contact-search' %}" method="POST">
                     <div class="search_box btn_style">
-                        <input class="search_f_style" type="search" name="search" placeholder="Search for . . .">
+                        {% csrf_token %}
+                        <input class="search_f_style" type="search" name="searched" placeholder="Search for . . .">
                         <button class="btn_ser tilt material-symbols-outlined" type="submit">search</button>
                     </div>
                 </form>

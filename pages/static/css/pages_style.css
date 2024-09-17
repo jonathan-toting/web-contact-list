@@ -233,12 +233,12 @@ a, u {
 }
 
 .search_box:hover {
-    width: 300px;
+    width: 23vw;
 }
 
 .search_box:hover > .search_f_style {
     display: flex;
-    width: 250px;
+    width: 20vw;
 }
 
 .material-symbols-outlined {

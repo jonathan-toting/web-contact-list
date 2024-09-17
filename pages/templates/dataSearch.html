@@ -2,6 +2,8 @@
 {% load static %}
 
 {% block data %}
+    {% if searched %}
+    <p>You have searched for . . .</p>
     <!-- Data Render -->
     {% for contact in contact_list %}
     <tr>
@@ -25,4 +27,7 @@
     </tr>
     {% endfor %}
     <!-- Data Render -->
+    {% else %}
+    <p>No data found . . .</p>
+    {% endif %}
 {% endblock %}

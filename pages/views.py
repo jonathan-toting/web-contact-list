@@ -1,6 +1,7 @@
 from django.shortcuts import redirect, render
 from .models import Contact
 from .forms import CreateForm
+from django.db.models import Q
 
 def contact_view(request):
     return render(request, 'dataView.html', {'contact_list' : Contact.objects.all()})
@@ -28,7 +29,21 @@ def contact_create(request, id=0):
         return redirect('contact-view')
     
 def contact_search(request):
-    return render(request, 'dataSearch.html', {})
+    if request.method == "POST":
+        searched = request.POST['searched']
+        multiple_searched = Q(
+            Q(cweb__contains = searched) | 
+            Q(cpersonel__contains = searched) | 
+            Q(cemail__contains = searched) | 
+            Q(cnumber__contains = searched) | 
+            Q(cname__contains = searched) | 
+            Q(caddress__contains = searched) | 
+            Q(cdescription__contains = searched)
+        )
+        contact_list = Contact.objects.filter(multiple_searched)
+        return render (request, 'dataSearch.html', {'searched' : searched, 'contact_list' : contact_list})
+    else:
+        return render(request, 'dataSearch.html', {})
     
 def contact_delete(request, id):
     entry = Contact.objects.get(pk=id)

@@ -3,11 +3,10 @@
 
 {% block data %}
     {% if searched %}
-    <p>You have searched for . . .</p>
+    <p>You have searched for "{{ searched }}"</p>
     <!-- Data Render -->
     {% for contact in contact_list %}
     <tr>
-        <td><div class="img_container"><a href="https://{{ contact.cweb }}" target="_blank" alt="Company logo link to website"><img src="{% static '/img/link.png' %}" alt="Company Logo"></a></div></td>
         <td>{{ contact.cpersonel }}</td>
         <td>{{ contact.cemail }}</td>
         <td>{{ contact.cnumber }}</td>
@@ -16,7 +15,7 @@
         <td>{{ contact.cdescription }}</td>
         <td>
             <div class="switch_container">
-                <a class="btn_star btn_style"><span class="pulse material-symbols-outlined">star</span></a>
+                <div class="img_container"><a href="https://{{ contact.cweb }}" target="_blank" alt="Link to website"><img src="{% static '/img/link.png' %}" alt="Company Logo"></a></div>
                 <form action="{% url 'contact-delete' contact.id %}" method="POST">
                     {% csrf_token %}
                     <button type="submit" class="btn_select_del btn_style"><span class="tilt material-symbols-outlined">delete</span></button>
@@ -28,6 +27,6 @@
     {% endfor %}
     <!-- Data Render -->
     {% else %}
-    <p>No data found . . .</p>
+    <p>Empty query . . .</p>
     {% endif %}
 {% endblock %}

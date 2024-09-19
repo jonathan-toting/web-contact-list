@@ -32,16 +32,16 @@ def contact_search(request):
     if request.method == "POST":
         searched = request.POST['searched']
         multiple_searched = Q(
-            Q(cweb__contains = searched) | 
-            Q(cpersonel__contains = searched) | 
-            Q(cemail__contains = searched) | 
-            Q(cnumber__contains = searched) | 
-            Q(cname__contains = searched) | 
-            Q(caddress__contains = searched) | 
-            Q(cdescription__contains = searched)
+            Q(cweb__icontains = searched) | 
+            Q(cpersonel__icontains = searched) | 
+            Q(cemail__icontains = searched) | 
+            Q(cnumber__icontains = searched) | 
+            Q(cname__icontains = searched) | 
+            Q(caddress__icontains = searched) | 
+            Q(cdescription__icontains = searched)
         )
         contact_list = Contact.objects.filter(multiple_searched)
-        return render (request, 'dataSearch.html', {'searched' : searched, 'contact_list' : contact_list})
+        return render(request, 'dataSearch.html', {'searched' : searched, 'contact_list' : contact_list})
     else:
         return render(request, 'dataSearch.html', {})
     

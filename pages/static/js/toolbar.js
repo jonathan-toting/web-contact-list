@@ -1,10 +1,10 @@
 let row_selectors = document.querySelectorAll('.row_selector');
-let btn_star = document.querySelectorAll('.btn_star');
+let img_container = document.querySelectorAll('.img_container');
 let btn_select_del = document.querySelectorAll('.btn_select_del');
 let btn_select_edt = document.querySelectorAll('.btn_select_edt');
 
 window.onload = function () {
-    btn_star.forEach(_obj => {
+    img_container.forEach(_obj => {
         _obj.style.display = 'flex';
     })
     btn_select_del.forEach(_obj => {
@@ -19,7 +19,7 @@ window.onload = function () {
 
 document.getElementsByClassName('btn_del')[0].onclick = function() {
     if (document.getElementsByClassName('btn_cancel_edt')[0].style.display === 'none') {
-        btn_star.forEach(_obj => {
+        img_container.forEach(_obj => {
             _obj.style.display = 'none';
         })
         btn_select_del.forEach(_obj => {
@@ -32,7 +32,7 @@ document.getElementsByClassName('btn_del')[0].onclick = function() {
 
 document.getElementsByClassName('btn_edt')[0].onclick = function() {
     if (document.getElementsByClassName('btn_cancel_del')[0].style.display === 'none') {
-        btn_star.forEach(_obj => {
+        img_container.forEach(_obj => {
             _obj.style.display = 'none';
         })
         btn_select_edt.forEach(_obj => {
@@ -44,7 +44,7 @@ document.getElementsByClassName('btn_edt')[0].onclick = function() {
 };
 
 document.getElementsByClassName('btn_cancel_del')[0].onclick = function() {
-    btn_star.forEach(_obj => {
+    img_container.forEach(_obj => {
         _obj.style.display = 'flex';
     })
     btn_select_del.forEach(_obj => {
@@ -55,7 +55,7 @@ document.getElementsByClassName('btn_cancel_del')[0].onclick = function() {
 };
 
 document.getElementsByClassName('btn_cancel_edt')[0].onclick = function() {
-    btn_star.forEach(_obj => {
+    img_container.forEach(_obj => {
         _obj.style.display = 'flex';
     })
     btn_select_edt.forEach(_obj => {

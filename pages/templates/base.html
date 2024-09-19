@@ -12,7 +12,7 @@
     <div id="wrapper">
         <!-- Header section where all the tools lie -->
         <div class="section header">
-            <div><span><b>Contact List</b></span></div>
+            <div><a href="{% url 'contact-view' %}"><span><b>Contact List</b></span></a></div>
             <div>
                 <form action="{% url 'contact-search' %}" method="POST">
                     <div class="search_box btn_style">

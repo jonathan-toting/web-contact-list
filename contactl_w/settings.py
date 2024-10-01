@@ -87,7 +87,7 @@ DATABASES = {
         'ENGINE' : 'django.db.backends.postgresql',
         'NAME' : 'contact_db',
         'USER' : 'postgres',
-        'PASSWORD' : 'Cloudsp@rk91801',
+        'PASSWORD' : 'test@webapp_ss',
         'HOST' : 'localhost',
         'PORT' : '9157',
     }

@@ -179,7 +179,7 @@ img, .img_container {
     display: grid;
     justify-items: center;
     align-items: center;
-  }
+}
   
 .switch_container > * {
     grid-column-start: 1;
